@@ -17,9 +17,7 @@ module.exports = function check(str, bracketsConfig) {
           flag= true;
           continue;
         }else if(flag && str[i] !== stuck[stuck.length - 1]){
-          ;
           stuck.push(str[i]);
-
           continue;
         }else{
           if(brackets[str[i]]===stuck[stuck.length - 1]){
@@ -29,6 +27,22 @@ module.exports = function check(str, bracketsConfig) {
             return false;
           }
         }
+      }
+      stuck.push(str[i]);
+      continue;
+    }else {
+
+
+      if(stuck.length === 0){
+        return false;
+      }
+
+      if(brackets[str[i]]===stuck[stuck.length - 1]){
+
+        stuck.pop();
+        continue;
+      }else{
+        return false;
       }
     }
   }
