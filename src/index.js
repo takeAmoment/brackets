@@ -1,3 +1,6 @@
 module.exports = function check(str, bracketsConfig) {
-  // your solution
+  let openBrackets=[];
+  let brackets = {};
+  let stuck = [];
+  let flag = false;
 }
