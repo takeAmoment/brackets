@@ -11,7 +11,25 @@ module.exports = function check(str, bracketsConfig) {
 
   for(let i= 0; i < str.length; i++){
     if(openBrackets.includes(str[i])){
-      
+      if(str[i] === brackets[str[i]]){
+        if(!flag){
+          stuck.push(str[i]);
+          flag= true;
+          continue;
+        }else if(flag && str[i] !== stuck[stuck.length - 1]){
+          ;
+          stuck.push(str[i]);
+
+          continue;
+        }else{
+          if(brackets[str[i]]===stuck[stuck.length - 1]){
+            stuck.pop();
+            continue;
+          }else{
+            return false;
+          }
+        }
+      }
     }
   }
 }
