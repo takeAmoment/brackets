@@ -46,4 +46,5 @@ module.exports = function check(str, bracketsConfig) {
       }
     }
   }
+  return stuck.length === 0;
 }
